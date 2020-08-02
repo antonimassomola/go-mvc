@@ -8,13 +8,13 @@ import (
 )
 
 var (
-	users = map[int64]*User{
-		123: &User{Id: 1, FirstName: "Alex", LastName: "Massó", Email: "alex@gmail.com"},
+	users = map[uint64]*User{
+		123: &User{Id: 123, FirstName: "Alex", LastName: "Massó", Email: "alex@gmail.com"},
 	}
 )
 
 // GetUser to retrieve from DB
-func GetUser(userID int64) (*User, *utils.ApplicationError) {
+func GetUser(userID uint64) (*User, *utils.ApplicationError) {
 	if user := users[userID]; user != nil {
 		return user, nil
 	}
